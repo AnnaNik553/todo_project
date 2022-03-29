@@ -1,7 +1,7 @@
 from rest_framework.serializers import ModelSerializer
 
-from users.serializers import UserModelSerializer
 from .models import Project, ToDo
+
 
 class ProjectModelSerializer(ModelSerializer):
 
@@ -11,8 +11,6 @@ class ProjectModelSerializer(ModelSerializer):
 
 
 class ToDoModelSerializer(ModelSerializer):
-    project = ProjectModelSerializer()
-    author = UserModelSerializer()
 
     class Meta:
         model = ToDo
