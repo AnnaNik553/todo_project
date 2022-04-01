@@ -8,6 +8,9 @@ class Project(models.Model):
     repository = models.URLField(blank=True, null=True)
     users = models.ManyToManyField(User)
 
+    class Meta:
+        ordering = ['-id']
+
     def __str__(self):
         return f'id: {self.pk} | {self.name}'
 
@@ -19,6 +22,9 @@ class ToDo(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ['-created_at']
 
     def __str__(self):
         return f'id: {self.pk} | project: {self.project} | active {self.is_active}'
