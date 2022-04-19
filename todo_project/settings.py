@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'todo',
     'django_filters',
-    'drf_yasg'
+    'drf_yasg',
+    'graphene_django'
 
     # 'rest_framework_simplejwt',
 ]
@@ -173,4 +174,8 @@ REST_FRAMEWORK = {
     ],
 
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.AcceptHeaderVersioning'
+}
+
+GRAPHENE = {
+    'SCHEMA': 'todo_project.schema.schema'
 }
