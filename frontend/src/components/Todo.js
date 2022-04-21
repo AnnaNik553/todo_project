@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const TodoItem = ({todo, projects, users}) => {
+const TodoItem = ({todo, projects, users, deleteToDo}) => {
     return (
         <tr>
             <td>{todo.id}</td>
@@ -14,12 +15,14 @@ const TodoItem = ({todo, projects, users}) => {
             {users.find(user => user.id === todo.author) ? users.find(user => user.id === todo.author).lastName : 'unknown author'}
             </td>
             <td>{todo.isActive.toString()}</td>
+            <td><button  onClick={() => deleteToDo(todo.id)} type='button' >Delete</button></td>
         </tr>
     )
 }
 
-const TodoList = ({todo_list, projects, users}) => {
+const TodoList = ({todo_list, projects, users, deleteToDo}) => {
     return (
+        <div>
         <table>
             <th>ID</th>
             <th>Project</th>
@@ -28,8 +31,11 @@ const TodoList = ({todo_list, projects, users}) => {
             <th>UpdatedAt</th>
             <th>Author</th> 
             <th>IsActive</th>
-            {todo_list.map((todo) => <TodoItem todo={todo} projects={projects} users={users} />)}
+            <th></th>
+            {todo_list.map((todo) => <TodoItem todo={todo} projects={projects} users={users} deleteToDo={deleteToDo} />)}
         </table>
+        <Link to='/todo/create'>Create</Link>
+        </div>
     )
 }
 
