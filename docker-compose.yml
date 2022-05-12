@@ -1,0 +1,36 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:13.1
+    privileged: true
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: admin_test
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: db
+  backend:
+    build: ./todo_project
+    privileged: true
+    ports:
+      - 8080:8080
+    command:
+      bash -c "while !</dev/tcp/db/5432; do sleep 1; done; 
+      python manage.py migrate &&
+      python manage.py create_test_data &&
+      gunicorn todo_project.wsgi -b 0.0.0.0:8080 "
+    depends_on:
+      - db
+  nginx:
+    build: ./nginx
+    ports:
+      - 8000:80
+    depends_on:
+      - backend
+  frontend:
+    build: ./frontend
+    ports:
+      - 80:80
+    depends_on:
+      - nginx

@@ -1,0 +1,228 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.menu {
+  background-color: rgb(101, 110, 241);
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+  box-sizing: border-box;
+}
+  
+.menu_list {
+  padding: 10px 25px;
+}
+
+.menu_link {
+  text-decoration: none;
+  color: aliceblue;
+}
+  
+a {
+  text-decoration: none;
+  color: rgb(65, 65, 212);
+}
+  
+.footer {
+  padding: 30px;
+  background-color: rgb(101, 110, 241);
+  color: aliceblue;
+  text-align: center;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.neonbutton {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+.neonbutton {
+  background: rgb(96,9,240);
+  background: linear-gradient(0deg, rgba(96,9,240,1) 0%, #8105f0 100%);
+  border: none;
+  margin: 0;
+}
+.neonbutton:before {
+  height: 0%;
+  width: 2px;
+}
+.neonbutton:hover {
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(248, 220, 220, 0.4);
+}
+
+.username {
+  height: 30px;
+  box-sizing: border-box;
+  text-align: right;
+  padding-right: 40px;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+}
+
+.create {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 60px;
+  background: #845ddd;
+  background: linear-gradient(0deg, #723af5 0%, #9138df 100%);
+  border-radius: 5px;
+  color: #fff;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+.delete {
+  padding: 7px 20px;
+  background: #774ae2;
+  background: linear-gradient(0deg, #6b1bec 0%, #8105f0 100%);
+  border-radius: 5px;
+  color: #fff;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+  border: none;
+}
+
+h3 {
+  text-align: center;
+}
+
+.height_div {
+  min-height: 500px;
+}
+
+.table {
+  border: 2px solid rgb(101, 110, 241);
+  border-radius: 5%;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 2px solid rgb(101, 110, 241);
+  vertical-align: middle;
+  padding: 3px 20px;
+}
+
+.login_form {
+  display: flex;
+  justify-content: center;
+}
+
+.login {
+  border: 2px solid rgb(101, 110, 241);
+  border-radius: 5%;
+  max-width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.submit {
+  width: 100px;
+  height: 35px;
+  margin-left: 30px;
+  background: #774ae2;
+  background: linear-gradient(0deg, #6b1bec 0%, #8105f0 100%);
+  border-radius: 5px;
+  color: #fff;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+  border: none;
+}
+
+.project_box{
+  display: flex;
+  justify-content: center;
+}
+
+.project_form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.project_input{
+  border: 2px solid rgb(101, 110, 241);
+  border-radius: 5%;
+  width: 250px;
+  min-height: 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: inline-block;
+  width: 150px;
+}
+
+.save {
+  width: 150px;
+  height: 35px;
+  background: #774ae2;
+  background: linear-gradient(0deg, #6b1bec 0%, #8105f0 100%);
+  border-radius: 5px;
+  color: #fff;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+  border: none;
+  margin-top: 30px;
+}
